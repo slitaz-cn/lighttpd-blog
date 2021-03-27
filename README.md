@@ -1,5 +1,5 @@
-# base64
+# lighttpd-blog
 
 ```console
-docker build -t base64 .
+docker build -t lighttpd-blog .
 ```
