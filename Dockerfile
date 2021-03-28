@@ -9,4 +9,4 @@ RUN mkdir -p /home/base64 && \
 FROM scratch AS root
 COPY --from=verify /home/base64/ /
 ENV PS1 "\u@\h:\w# "
-CMD ["lighttpd" "-D" "-f" "/etc/lighttpd/lighttpd.conf"]
+CMD ["lighttpd" "-f" "/etc/lighttpd/lighttpd.conf"]
