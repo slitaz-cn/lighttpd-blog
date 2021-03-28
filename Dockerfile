@@ -8,5 +8,8 @@ RUN mkdir -p /home/base64 && \
 
 FROM scratch AS root
 COPY --from=verify /home/base64/ /
-ENV PS1 "\u@\h:\w# "
+RUN wget -O /usr/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.5/dumb-init_1.2.5_x86_64
+RUN chmod +x /usr/bin/dumb-init
+ENTRYPOINT ["/usr/bin/dumb-init"]
 CMD ["/usr/sbin/lighttpd" "-f" "/etc/lighttpd/lighttpd.conf"]
+
