@@ -11,3 +11,4 @@ COPY --from=verify /home/base64/ /
 ENV PS1 "\u@\h:\w# "
 ENV PATH /usr/bin:$PATH
 CMD ["/bin/sh","-c","/etc/init.d/lighttpd start"]
+RUN /usr/sbin/lighttpd -D -f /etc/lighttpd/lighttpd.conf
